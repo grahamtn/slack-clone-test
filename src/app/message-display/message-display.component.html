@@ -1,0 +1,9 @@
+
+<h2>LETS FUCKIN CHAT DUUUUUUDE</h2>
+<ul class="messages">
+  <li *ngFor="let message of messages">
+    <span class="badge">{{message.messageBody}}</span>
+  </li>
+</ul>
+
+<app-message-input [message]= "newMessage"></app-message-input>
