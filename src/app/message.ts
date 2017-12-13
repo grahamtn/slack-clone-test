@@ -1,3 +1,7 @@
 export class Message {
-  messageBody: string;
+  messageBody: String;
+
+  constructor(body: String){
+      this.messageBody = body;
+  }
 }
