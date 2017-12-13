@@ -9,7 +9,7 @@ import { Message } from '../message';
 export class MessageInputComponent implements OnInit {
 
   constructor() { }
-
+  function bullshit(){}
   ngOnInit() {
   }
 
