@@ -3,6 +3,10 @@ import { Message } from '../message';
 import { MESSAGES } from '../mock-messages';
 import { FormsModule } from '@angular/forms';
 import { MessageInputComponent } from '../message-input/message-input.component';
+import { StoreMessageService } from '../store-message.service';
+import { Observable } from 'rxjs/Observable';
+import { of } from 'rxjs/observable/of';
+
 
 @Component({
   selector: 'app-message-display',
@@ -11,15 +15,20 @@ import { MessageInputComponent } from '../message-input/message-input.component'
 })
 export class MessageDisplayComponent implements OnInit {
 
-  messages = MESSAGES;
+
+  messages: String[];
 
   message: Message = {
       messageBody: 'YO DUDE!'
   };
 
-  constructor() { }
+  constructor(private storeMessageService: StoreMessageService) { }
 
   ngOnInit() {
   }
 
+  getMessages(): void {
+    this.storeMessageService.getMessages()
+        .subscribe(messages => this.messages = messages);
+  }
 }
