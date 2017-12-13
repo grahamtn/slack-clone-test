@@ -8,9 +8,13 @@ import { Message } from '../message';
 })
 export class MessageInputComponent implements OnInit {
 
+  @Input() message: Message;
+
   constructor() { }
-  function bullshit(){}
+
   ngOnInit() {
   }
+
+
 
 }

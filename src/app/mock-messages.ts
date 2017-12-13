@@ -1,6 +1,6 @@
 import { Message } from './message';
 
-export const MESSAGES: Message[] = [
+export var MESSAGES: Message[] = [
     {messageBody: 'Yo Dude!'},
     {messageBody: 'Whats up Dude!'},
     {messageBody: 'Nuttin Dude!'},
