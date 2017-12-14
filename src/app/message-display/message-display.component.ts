@@ -16,19 +16,11 @@ import { of } from 'rxjs/observable/of';
 export class MessageDisplayComponent implements OnInit {
 
 
-  messages: String[];
-
-  message: Message = {
-      messageBody: 'YO DUDE!'
-  };
+ messages = MESSAGES;
 
   constructor(private storeMessageService: StoreMessageService) { }
 
   ngOnInit() {
   }
 
-  getMessages(): void {
-    this.storeMessageService.getMessages()
-        .subscribe(messages => this.messages = messages);
-  }
 }
