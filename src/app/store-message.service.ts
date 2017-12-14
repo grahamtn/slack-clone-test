@@ -11,11 +11,13 @@ export class StoreMessageService {
   }
 
   createMessage(input:String){
-      this.newMessage = new Message(input);
+      let time = new Date().toLocaleTimeString();
+      this.newMessage = new Message(input, time);
       this.storeMessage(this.newMessage);
   }
 
   storeMessage(newMessage: Message){
+      console.log(newMessage.timeStamp);
       MESSAGES.push(newMessage);
   }
 }

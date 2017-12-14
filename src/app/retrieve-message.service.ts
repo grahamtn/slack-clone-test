@@ -12,6 +12,7 @@ export class RetrieveMessageService {
 
   getMessages(): Observable<Message[]>{
       return of(MESSAGES);
+     
   }
 
 }

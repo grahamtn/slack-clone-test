@@ -11,6 +11,7 @@ import { RetrieveMessageService } from '../retrieve-message.service';
   templateUrl: './message-display.component.html',
   styleUrls: ['./message-display.component.css']
 })
+
 export class MessageDisplayComponent implements OnInit {
 
  messages: Message[];
