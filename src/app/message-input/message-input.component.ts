@@ -14,7 +14,8 @@ export class MessageInputComponent {
     constructor(private storeMessageService: StoreMessageService){}
 
     createMessage(input:String){
+        //input = new Date().toLocaleTimeString();
         this.storeMessageService.createMessage(input);
     }
-    
+
 }
