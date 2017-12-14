@@ -6,12 +6,14 @@ import { MessageDisplayComponent } from './message-display/message-display.compo
 import { MessageInputComponent } from './message-input/message-input.component';
 import { StoreMessageService } from './store-message.service';
 import { RetrieveMessageService } from './retrieve-message.service';
+import { MessageDetailComponent } from './message-detail/message-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MessageDisplayComponent,
-    MessageInputComponent
+    MessageInputComponent,
+    MessageDetailComponent
   ],
   imports: [
     BrowserModule,

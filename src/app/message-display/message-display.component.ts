@@ -5,6 +5,7 @@ import { MessageInputComponent } from '../message-input/message-input.component'
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { RetrieveMessageService } from '../retrieve-message.service';
+import { MessageDetailComponent } from '../message-detail/message-detail.component';
 
 @Component({
   selector: 'app-message-display',
@@ -15,6 +16,7 @@ import { RetrieveMessageService } from '../retrieve-message.service';
 export class MessageDisplayComponent implements OnInit {
 
  messages: Message[];
+ selectedMessage: Message;
 
   constructor(private retrieveMessageService: RetrieveMessageService) { }
 
@@ -27,4 +29,7 @@ export class MessageDisplayComponent implements OnInit {
             .subscribe(messages => this.messages = messages);
   }
 
+  onSelect(message: Message): void {
+    this.selectedMessage = message;
+  }
 }

@@ -1,6 +1,9 @@
 <h2>LETS CHAT DUUUUUUDE</h2>
+<app-message-detail [message] = "selectedMessage"></app-message-detail>
 <ul class="messages">
-  <li *ngFor="let message of messages">
+  <li *ngFor="let message of messages"
+      [class.selected] = "message === selectedMessage"
+      (click) = "onSelect(message)">
     <span class="badge">{{message.messageBody}}</span>
   </li>
 </ul>
