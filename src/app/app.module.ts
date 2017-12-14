@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms'
 import { AppComponent } from './app.component';
 import { MessageDisplayComponent } from './message-display/message-display.component';
 import { MessageInputComponent } from './message-input/message-input.component';
-
+import { StoreMessageService } from './store-message.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import { MessageInputComponent } from './message-input/message-input.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [StoreMessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

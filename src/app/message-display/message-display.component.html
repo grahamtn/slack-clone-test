@@ -5,4 +5,5 @@
     <span class="badge">{{message.messageBody}}</span>
   </li>
 </ul>
+<div *ngFor='let message of storeMessageService.messages'> {{message}} </div>
 <app-message-input></app-message-input>
