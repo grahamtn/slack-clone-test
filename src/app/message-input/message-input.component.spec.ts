@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms'
+import { StoreMessageService } from '../store-message.service';
 import { MessageInputComponent } from './message-input.component';
+import { Message } from '../message';
+import { MESSAGES } from '../mock-messages';
 
 describe('MessageInputComponent', () => {
   let component: MessageInputComponent;
@@ -8,7 +12,9 @@ describe('MessageInputComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MessageInputComponent ]
+      declarations: [ MessageInputComponent ],
+      imports: [FormsModule],
+      providers: [StoreMessageService],
     })
     .compileComponents();
   }));
@@ -22,4 +28,10 @@ describe('MessageInputComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should create a message', () => {
+      component.createMessage("Hello");
+      expect(MESSAGES[MESSAGES.length - 1].messageBody).toEqual('Hello');
+  });
+
 });

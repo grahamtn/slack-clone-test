@@ -15,12 +15,14 @@ import { of } from 'rxjs/observable/of';
 })
 export class MessageDisplayComponent implements OnInit {
 
-
  messages = MESSAGES;
 
   constructor(private storeMessageService: StoreMessageService) { }
 
   ngOnInit() {
+      this.storeMessageService.getMessages();
   }
+
+
 
 }

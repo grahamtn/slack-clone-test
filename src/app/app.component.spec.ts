@@ -2,6 +2,9 @@ import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { MessageDisplayComponent } from './message-display/message-display.component';
 import { MessageInputComponent } from './message-input/message-input.component';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { StoreMessageService } from './store-message.service';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -11,6 +14,8 @@ describe('AppComponent', () => {
           MessageDisplayComponent,
           MessageInputComponent
       ],
+      imports: [FormsModule],
+      providers: [StoreMessageService],
     }).compileComponents();
   }));
   it('should create the app', async(() => {
