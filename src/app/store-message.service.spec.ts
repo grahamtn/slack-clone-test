@@ -24,8 +24,4 @@ describe('StoreMessageService', () => {
       expect(MESSAGES[MESSAGES.length - 1].messageBody).toEqual('Hello');
   });
 
-  it('should return a message',() => {
-    expect(service.getMessages()[0].messageBody).toEqual('Yo Dude!');
-  });
-
 });

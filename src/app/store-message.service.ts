@@ -18,10 +18,4 @@ export class StoreMessageService {
   storeMessage(newMessage: Message){
       MESSAGES.push(newMessage);
   }
-
-  getMessages(){
-      return MESSAGES;
-  }
-
-
 }

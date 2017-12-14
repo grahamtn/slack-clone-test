@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Message } from '../message';
-import { MESSAGES } from '../mock-messages';
 import { FormsModule } from '@angular/forms';
 import { MessageInputComponent } from '../message-input/message-input.component';
-import { StoreMessageService } from '../store-message.service';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
-
+import { RetrieveMessageService } from '../retrieve-message.service';
 
 @Component({
   selector: 'app-message-display',
@@ -15,14 +13,17 @@ import { of } from 'rxjs/observable/of';
 })
 export class MessageDisplayComponent implements OnInit {
 
- messages = MESSAGES;
+ messages: Message[];
 
-  constructor(private storeMessageService: StoreMessageService) { }
+  constructor(private retrieveMessageService: RetrieveMessageService) { }
 
   ngOnInit() {
-      this.storeMessageService.getMessages();
+      this.getMessages();
   }
 
-
+  getMessages(): void{
+        this.retrieveMessageService.getMessages()
+            .subscribe(messages => this.messages = messages);
+  }
 
 }

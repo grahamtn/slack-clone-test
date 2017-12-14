@@ -6,6 +6,7 @@ import { MessageInputComponent } from '../message-input/message-input.component'
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { StoreMessageService } from '../store-message.service';
+import { RetrieveMessageService } from '../retrieve-message.service';
 
 describe('MessageDisplayComponent', () => {
   let component: MessageDisplayComponent;
@@ -15,7 +16,7 @@ describe('MessageDisplayComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ MessageDisplayComponent, MessageInputComponent],
       imports: [FormsModule],
-      providers: [StoreMessageService],
+      providers: [StoreMessageService,RetrieveMessageService],
     })
     .compileComponents();
   }));

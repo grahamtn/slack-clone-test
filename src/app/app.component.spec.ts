@@ -5,6 +5,7 @@ import { MessageInputComponent } from './message-input/message-input.component';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { StoreMessageService } from './store-message.service';
+import { RetrieveMessageService } from './retrieve-message.service';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -15,7 +16,7 @@ describe('AppComponent', () => {
           MessageInputComponent
       ],
       imports: [FormsModule],
-      providers: [StoreMessageService],
+      providers: [StoreMessageService, RetrieveMessageService],
     }).compileComponents();
   }));
   it('should create the app', async(() => {

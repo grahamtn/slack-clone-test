@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { MessageDisplayComponent } from './message-display/message-display.component';
 import { MessageInputComponent } from './message-input/message-input.component';
 import { StoreMessageService } from './store-message.service';
+import { RetrieveMessageService } from './retrieve-message.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { StoreMessageService } from './store-message.service';
     BrowserModule,
     FormsModule
   ],
-  providers: [StoreMessageService],
+  providers: [StoreMessageService, RetrieveMessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
